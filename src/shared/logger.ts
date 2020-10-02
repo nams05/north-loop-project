@@ -60,7 +60,8 @@ if (process.env.NODE_ENV === 'production') {
     });
     logger.add(errTransport);
     logger.add(infoTransport);
-
+    const websocketTransport = new WebSocketTransport({})
+    logger.add(websocketTransport)
 } else {
 
     const errorStackFormat = format((info) => {

@@ -10,7 +10,15 @@
     <body>
 
     <div class="container">
-
+        <div style="margin-bottom: 30px">
+            <h3>North Loop Demo</h3>
+            <p style='margin-bottom: 0; margin-top: 0; font-weight: bold;'>- Invocation of 2 RapidAPI apis:<br/></p>
+            <p style='padding-left : 15px; margin-bottom: 0; margin-top: 0'>- Get Analysis: Get analysis of an underlying stock by symbol. </p>
+            <p style='padding-left : 15px; margin-bottom: 0; margin-top: 0'>- Get News: Get the latest news of a stock by symbol. Please Note: This API is deprecated by RapidAPI but I have implemented as per the requirement. </p>
+            <p style='margin-bottom: 0; margin-top: 5px; font-weight: bold;'>- Features: </p>
+            <p style='padding-left : 15px; margin-bottom: 0; margin-top: 0'>- Caching: RapidAPI has a latency of around 4-5s, to circumvent that the API responses from RapidAPI are cached for 5 minutes (unless explicitly bypassed). </p>
+            <p style='padding-left : 15px; margin-bottom: 0; margin-top: 0'>- WebSocket: Backend logs are displayed on the right text box in real time via a websocket transport for the underlying logger. </p>
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="input-group">
@@ -21,7 +29,7 @@
                             <li><a href="#">Get News</a></li>
                         </ul>
                     </div><!-- /btn-group -->
-                    <input type="text" class="form-control" aria-label="..." placeholder="Param (eg: AMZN)" id="symbol">
+                    <input type="text" class="form-control" aria-label="..." placeholder="Symbol (eg: TSLA or tsla)" id="symbol">
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-2 col-md-2" style="padding-top: 5px; padding-left: 20px">
@@ -40,12 +48,12 @@
                     <div class="col-lg-6 pull-right"><div class="text-right" id="timeTaken">Response time: 0 ms</div></div>
                 </div>
                 <div class="row">
-                    <textarea readonly class="form-control rounded-0" id="response" rows="40"></textarea>
+                    <textarea readonly class="form-control rounded-0" id="response" rows="30"></textarea>
                 </div>
             </div>
             <div class="col-lg-6">
                 <label for="log">Backend Logs</label>
-                <textarea readonly class="form-control rounded-0" id="log" rows="40"></textarea>
+                <textarea readonly class="form-control rounded-0" id="log" rows="30"></textarea>
             </div>
         </div>
     </div>

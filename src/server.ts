@@ -58,6 +58,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     });
 });
 
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', 'script-src \'self\' https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com');
+    return next();
+});
 
 
 /************************************************************************************
