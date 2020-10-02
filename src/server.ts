@@ -10,14 +10,27 @@ import 'express-async-errors';
 import BaseRouter from './routes';
 import logger from '@shared/logger';
 
+import expressWs from 'express-ws'
+import {sendToSingleWSClient} from './services/internal/websocket'
 
 // Init express
-const app = express();
-
+const server = expressWs(express())
+const app = server.app
 
 
 /************************************************************************************
- *                              Set basic express settings
+ *                              Enable web socket: express-ws
+ ***********************************************************************************/
+app.ws('/api/logger/socket', async (ws, req) => {
+    await sendToSingleWSClient(ws, 'Connected to websocket.')
+    ws.on('message', async (message) => {
+        await sendToSingleWSClient(ws, { message })
+    })
+})
+
+
+/************************************************************************************
+ *                              Set basic express stuff
  ***********************************************************************************/
 
 app.use(express.json());
@@ -60,4 +73,4 @@ app.get('*', (req: Request, res: Response) => {
 });
 
 // Export express instance
-export default app;
+export default server;

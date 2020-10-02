@@ -17,7 +17,13 @@
         "src/shared/*"
       ],
       "@server": [
-        "src/Server"
+        "src/server"
+      ],
+      "@internal": [
+        "src/services/internal"
+      ],
+      "@external": [
+        "src/services/external"
       ]
     },
     "types": [

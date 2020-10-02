@@ -15,21 +15,21 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <div class="input-group-btn">
-                        <button type="button" id="api" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="get-analysis">Select API <span class="caret"></span></button>
+                        <button type="button" id="api" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value=>Select API <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                             <li><a href="#">Get Analysis</a></li>
                             <li><a href="#">Get News</a></li>
                         </ul>
                     </div><!-- /btn-group -->
-                    <input type="text" class="form-control" aria-label="..." placeholder="Param (eg: AMZN)" id="param">
+                    <input type="text" class="form-control" aria-label="..." placeholder="Param (eg: AMZN)" id="symbol">
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-2 col-md-2" style="padding-top: 5px; padding-left: 20px">
-                <input type="checkbox" class="form-check-input p-3" id="customControlValidation1" required>
-                <label for="customControlValidation1">Use caching</label>
+                <input type="checkbox" class="form-check-input p-3" id="bypassCache" required>
+                <label for="bypassCache">Bypass Cache</label>
             </div>
 
-            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" id="invoke" class="btn btn-primary">Invoke API</button>
 
         </div>
 
@@ -37,7 +37,7 @@
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-lg-6"><label for="response">API Response</label></div>
-                    <div class="col-lg-6 pull-right"><div class="text-right">Time Taken: 600ms</div></div>
+                    <div class="col-lg-6 pull-right"><div class="text-right" id="timeTaken">Response time: 0 ms</div></div>
                 </div>
                 <div class="row">
                     <textarea readonly class="form-control rounded-0" id="response" rows="40"></textarea>
