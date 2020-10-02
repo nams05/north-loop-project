@@ -50,6 +50,16 @@ function validateAndGetInput() {
     return { symbol, api, bypassCache }
 }
 
+function updateTimeTaken(startTime) {
+    const timeTakenMs = Date.now() - startTime;
+    let cssClass = 'text-success';
+    if (timeTakenMs > 1000) {
+        cssClass = 'text-danger'
+    }
+    const timeTakenString = `Response time: <p class="${cssClass}" style="font-weight: bold;display:inline">${timeTakenMs} ms</p>`;
+    $('#timeTaken').html(timeTakenString);
+}
+
 function attachInvokeAPIListener() {
     $('#invoke').click(async (e) => {
         disableInvokeButton();
@@ -62,8 +72,7 @@ function attachInvokeAPIListener() {
             response = await fetch('/api/finance/get/news?symbol=' + symbol + '&bypassCache=' + bypassCache)
         }
         const jsonResponse = JSON.parse(await response.text());
-        const timeTakenMs = `Response time: ${Date.now() - startTime} ms`;
-        $('#timeTaken').text(timeTakenMs);
+        updateTimeTaken(startTime);
         $('#response').val(JSON.stringify(jsonResponse, null, 3));
         enableInvokeButton()
     })
