@@ -26,3 +26,12 @@ export const successResponse = (result: any, endpoint: string, cacheHit: boolean
         data: result
     }
 }
+
+export const failureResponse = (result: any, endpoint: string, cacheHit: boolean): any => {
+    return {
+        cacheHit,
+        success: false,
+        api: endpoint,
+        data: result
+    }
+}
