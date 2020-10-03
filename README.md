@@ -35,7 +35,7 @@ This project integrates with Yahoo's finance API(s) via RapidApi.
 
 ### API(s)
 1. **Get Analysis**  
-     Gets analysis of an underlying stock by symbol.
+     Gets analysis of an underlying stock by symbol.  
      Endpoint: `GET /api/finance/get/analysis`    
      
      **Query Parameters**
@@ -44,8 +44,8 @@ This project integrates with Yahoo's finance API(s) via RapidApi.
     | `symbol`      | < stock symbol > | Symbol of the stock that you want to query |
     | `bypassCache` | < true / false > | Toggle backend application level caching   |
     
-2. **Get News** 
-     Gets the latest news of a stock by symbol. Please Note: This API is deprecated by RapidAPI but I have implemented as per the requirement.
+2. **Get News**  
+     Gets the latest news of a stock by symbol. Please Note: This API is deprecated by RapidAPI but I have implemented as per the requirement.  
      Endpoint: `GET /api/finance/get/news`    
         
      **Query Parameters**
@@ -94,7 +94,7 @@ To get a local copy up and running follow these simple steps.
 
 ## Usage
 
-The app is running on your [localhost](http://localhost:3099)
+The app is running on your [localhost](http://localhost:3099).
 
 <!-- LICENSE -->
 ## License
