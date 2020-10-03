@@ -95,8 +95,3 @@ To get a local copy up and running follow these simple steps.
 ## Usage
 
 The app is running on your [localhost](http://localhost:3099).
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
