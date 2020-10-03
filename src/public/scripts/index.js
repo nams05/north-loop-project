@@ -10,7 +10,7 @@ $(function(){
 
 function attachSocket() {
     const url = window.location;
-    const webSocket = new WebSocket('wss://' + url.host + '/api/logger/socket');
+    const webSocket = new WebSocket('ws://' + url.host + '/api/logger/socket');
     webSocket.onmessage = (event) => {
         const log = $('#log');
         log.val(log.val() + '\n' + event.data)
