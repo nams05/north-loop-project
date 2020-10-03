@@ -82,7 +82,11 @@ To get a local copy up and running follow these simple steps.
     ```sh
     npm install
     ```
-3. Run the app
+3. Add your API in the `.env` file
+    ```
+    RAPID_API_KEY = 'ENTER YOUR API';
+    ```
+4. Run the app
     - Development mode
        ```sh
        npm run start:dev
