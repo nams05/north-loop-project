@@ -51,11 +51,8 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
-```sh
-npm install npm@latest -g
-```
-
+* [npm](https://www.npmjs.com/get-npm)
+* [node](https://nodejs.org/en/)
 ### Installation
 
 1. Clone the repo
@@ -66,18 +63,19 @@ npm install npm@latest -g
     ```sh
     npm install
     ```
-3. Build the app
-    ```sh
-    npm run build
-    ```
-4. Run the app
-   ```sh
-   npm run start
-    ```
+3. Run the app
+    - Development mode
+       ```sh
+       npm run start:dev
+        ```
+   - Production mode
+      ```sh
+      npm run start
+       ```
 
 ## Usage
 
-The app is running on your localhost:3099
+The app is running on your [localhost](http://localhost:3099)
 
 <!-- LICENSE -->
 ## License
