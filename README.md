@@ -34,14 +34,32 @@ This project integrates with Yahoo's finance API(s) via RapidApi.
 * [Typescript](https://www.typescriptlang.org/)
 
 ### API(s)
-1. `Get Analysis`: Gets analysis of an underlying stock by symbol.
-   
-2. `Get News`: Gets the latest news of a stock by symbol. Please Note: This API is deprecated by RapidAPI but I have implemented as per the requirement.
-   
+1. **Get Analysis**  
+     Gets analysis of an underlying stock by symbol.
+     Endpoint: `GET /api/finance/get/analysis`    
+     
+     ######Query Parameters
+    | Parameter     | Value            | Description                                |
+    |---------------|------------------|--------------------------------------------|
+    | `symbol`      | < stock symbol > | Symbol of the stock that you want to query |
+    | `bypassCache` | < true / false > | Toggle backend application level caching   |
+    
+2. **Get News** 
+     Gets the latest news of a stock by symbol. Please Note: This API is deprecated by RapidAPI but I have implemented as per the requirement.
+     Endpoint: `GET /api/finance/get/analysis`    
+        
+     ######Query Parameters
+    | Parameter     | Value            | Description                                |
+    |---------------|------------------|--------------------------------------------|
+    | `symbol`      | < stock symbol > | Symbol of the stock that you want to query |
+    | `bypassCache` | < true / false > | Toggle backend application level caching   |
+    
 ### Features
-- `Caching`: RapidAPI has a latency of around 4-5s, to circumvent that the API responses from RapidAPI are cached for 5 minutes (unless explicitly bypassed).
+- **Caching**  
+    RapidAPI has a latency of around 4-5s, to circumvent that the API responses from RapidAPI are cached for 5 minutes (unless explicitly bypassed).
 
-- `WebSocket`: Backend logs are displayed on the right text box in real time via a websocket transport for the underlying logger.
+- **WebSocket**  
+    Backend logs are displayed on the right text box in real time via a websocket transport for the winston logger.
 
 
 <!-- GETTING STARTED -->
@@ -53,6 +71,7 @@ To get a local copy up and running follow these simple steps.
 
 * [npm](https://www.npmjs.com/get-npm)
 * [node](https://nodejs.org/en/)
+
 ### Installation
 
 1. Clone the repo
@@ -67,11 +86,11 @@ To get a local copy up and running follow these simple steps.
     - Development mode
        ```sh
        npm run start:dev
-        ```
+       ```
    - Production mode
       ```sh
       npm run start
-       ```
+      ```
 
 ## Usage
 
